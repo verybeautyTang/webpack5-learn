@@ -6,11 +6,13 @@
 
 module.exports = function(source) {
     console.log('source', source)
-    console.log(this)
+    console.log(this.getOptions());
 
     // 编译就是对字符串的处理过程
 
-    source = source.replace('hello', '****');
+    source = source.replace( this.getOptions().name ?? 'hello', 'this is new title');
+
+    // source = source.replace('hello', '****');
 
     return source;
 

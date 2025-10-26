@@ -1,5 +1,6 @@
 // const loaderItem = require('./loaders/loaderItem.js'
 const path = require('node:path');
+const AssetsMapPlugin = require('./plugins/AssetsMapPlugin.js')
 
 module.exports = exports = {
     // 单入口
@@ -10,7 +11,13 @@ module.exports = exports = {
             {
                 test: /\.js$/,
                 // 注意这里的路径一定要用绝对路径
-                use: 'loaderItem'
+                use: {
+                    loader: 'loaderItem',
+                    options: {
+                        name: 'loaderItem option',
+                        content: 'this is loaderItem content'
+                    }
+                }
                 // use: path.resolve(__dirname, './loaders/loaderItem.js')
             }
         ]
@@ -21,5 +28,6 @@ module.exports = exports = {
     },
     output: {
         clean: true,
-    }
+    },
+    plugins:[new AssetsMapPlugin()]
 }
