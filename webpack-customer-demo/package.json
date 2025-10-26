@@ -8,7 +8,8 @@
   },
   "devDependencies": {
     "webpack": "^5.102.1",
-    "webpack-cli": "^6.0.1"
+    "webpack-cli": "^6.0.1",
+    "loader-utils": "^3.3.1"
   },
   "keywords": [],
   "author": "",

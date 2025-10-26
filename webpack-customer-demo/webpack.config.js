@@ -10,9 +10,14 @@ module.exports = exports = {
             {
                 test: /\.js$/,
                 // 注意这里的路径一定要用绝对路径
-                use: path.resolve(__dirname, './loaders/loaderItem.js')
+                use: 'loaderItem'
+                // use: path.resolve(__dirname, './loaders/loaderItem.js')
             }
         ]
+    },
+    resolveLoader: {
+        // 告诉webpack去哪个目录下去寻找loader
+        modules: [ 'node_modules', path.resolve(__dirname, './loaders')]
     },
     output: {
         clean: true,
