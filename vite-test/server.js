@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
 })
 
 
-app.get("/*.js", (req, res) => {
+app.get(/\.js$/, (req, res) => {
     const path = req.path;
     const file = fs.readFileSync(__dirname + "/src" + path, 'utf-8');
     res.type('js'); 
@@ -22,7 +22,7 @@ app.get("/*.js", (req, res) => {
 
 
 // postcssPlugin
-app.get("/*.css", (req, res) => {
+app.get(/\.css$/, (req, res) => {
     const path = req.path;
     const file = fs.readFileSync(__dirname + "/src" + path, 'utf-8');
     // res.type('css');
@@ -32,7 +32,7 @@ app.get("/*.css", (req, res) => {
 
 // 插件化机制
 //esbuild plugin
-app.get("/*.ts", async (req, res) => {
+app.get(/\.ts/, async (req, res) => {
     const path = req.path;
     const file = fs.readFileSync(__dirname + "/src" + path, 'utf-8');
     const transformResult = await esbuild.transform(file, {
@@ -40,7 +40,8 @@ app.get("/*.ts", async (req, res) => {
         format: 'esm',
         target: 'es6'
     })
-    res.type('ts');
+    // 设置正确的头部
+    res.type('js');
     res.end(transformResult.code)
 })
 
