@@ -25,3 +25,16 @@ vite在开发环境使用的是esbuild进行构建，所以很多编译工作都
 4. 样式处理 css配置
 5. vite环境变量 define配置
 6. 产物构建 build、esbuild配置
+
+
+### vite插件
+ Vite插件与webpack插件区别很大
+ 1. webpack plugin一般是强化构建过程，通过暴露钩子在不同的时机做一些处理，loader的工作是模块的编译与解析。如果用plugin去做解析，那就是不对的。
+ 2. vite plugin的本质是函数
+ 3. 插件处理编译问题
+ 4. 插件处理编译内容输出
+ 5. 插件处理配置问题
+
+ 
+ ### vite原理
+借助浏览器的module支持

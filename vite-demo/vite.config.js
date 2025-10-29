@@ -1,9 +1,12 @@
 import { defineConfig } from "vite"
 // 优化react，比如做什么热更新之类的
 import react from '@vitejs/plugin-react'
+// 自定义插件，将端口号改成2345
+import portPlugin from './plugins/portPlugin.js'
+import transformPlugin from './plugins/transformPlugin.js'
 
 export default defineConfig({
-    plugins: [react()],
+    plugins: [react(),portPlugin(),transformPlugin()],
     resolve: {
         alias: {
             "@": "/src"
