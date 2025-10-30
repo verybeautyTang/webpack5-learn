@@ -25,9 +25,10 @@ app.get(/\.js$/, (req, res) => {
 app.get(/\.css$/, (req, res) => {
     const path = req.path;
     const file = fs.readFileSync(__dirname + "/src" + path, 'utf-8');
-    // res.type('css');
+    console.log(file)
+    // res.type('js');
     // 返回了，但是没有处理
-    res.end(file)
+    res.end(`window.resolveCss(${JSON.stringify(file)})`)
 })
 
 // 插件化机制

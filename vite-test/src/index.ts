@@ -1,7 +1,7 @@
 
 import './index.css'
 
-import { sum } from './sum.ts'
+import sum  from './sum.ts'
 
 type User = {
     name:  string,
