@@ -1,0 +1,1 @@
+export const b = 'nice to meet u'
