@@ -1,3 +1,4 @@
+import './index.css'
 export const name: string = 'jasmine'
 
 interface IAnimal {
