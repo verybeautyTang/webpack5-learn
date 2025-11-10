@@ -1,4 +1,10 @@
+import parser from '@typescript-eslint/parser'
+
 export default {
+  // 配置文件，校验哪些文件需要被检查
+  files: ['**/*.ts'],
+  // 取消检验自己
+  ignores: ['eslint.config.js','eslint-config.mjs']
   rules: {
     // 没有使用过的变量会报错
     'no-unused-vars': 'error',
@@ -8,6 +14,10 @@ export default {
     'no-sparse-arrays': 'error',
     // 不允许对象里面有多个相同的 key
     'no-dupe-keys': 'error',
+  },
+  // 指定解析器
+  languageOptions: {
+    parser: parser,
   },
 }
 

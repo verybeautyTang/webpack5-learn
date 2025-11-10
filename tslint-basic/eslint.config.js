@@ -2,6 +2,7 @@ import parser from '@typescript-eslint/parser'
 
 export default {
   files: ['**/*.ts'],
+  ignores: ['eslint.config.js','eslint-config.mjs']
   rules: {
     // 没有使用过的变量会报错
     'no-unused-vars': 'error',
