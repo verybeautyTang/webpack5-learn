@@ -4,6 +4,10 @@ export default {
     'no-unused-vars': 'error',
     // 如果打印出来有 console， 也报错（不允许打印）
     'no-console': 'error',
+    // 不允许数组里面出现空的
+    'no-sparse-arrays': 'error',
+    // 不允许对象里面有多个相同的 key
+    'no-dupe-keys': 'error',
   },
 }
 
