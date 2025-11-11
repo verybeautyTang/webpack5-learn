@@ -1,3 +1,8 @@
+<template>
+  <div>wwww</div>
+</template>
+
+<script lang="ts" setup>
 const name = 'jasmine'
 
 const age = 18
@@ -23,3 +28,9 @@ function getdata() {
 }
 
 getdata()
+
+interface User {
+  name: String
+  age: Number
+}
+</script>
